@@ -65,6 +65,7 @@
 	width: 100%;
 	transform: translate(-50%,-50%);
 }
+
 /* Componentes formulário */
 .gcs-form {
 	float: left;
@@ -179,6 +180,7 @@
 	width: 100%;
 }
 }
+
 /* Calendário */
 .ui-datepicker-header {
 	padding: 5px 20px!important;
@@ -265,6 +267,7 @@
 	padding: 8px 16px;
 	text-align: center;
 }
+
 /* Barra de carregamento */
 .gcs-form .gform_wrapper .gf_progressbar_wrapper {
 	margin-bottom: 20px;

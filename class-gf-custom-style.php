@@ -9,7 +9,7 @@ class GFCustomStyle extends GFAddOn
 	protected $_slug = 'gf-custom-style';
 	protected $_path = 'gf-custom-style/gf-custom-style.php';
 	protected $_full_path = __FILE__;
-	protected $_title = 'Gravity Forms Float Labels Add-On';
+	protected $_title = 'Gravity Forms Custom Style Add-On';
 	protected $_short_title = 'Custom Style';
 
 	private static $_instance = null;
@@ -48,7 +48,7 @@ class GFCustomStyle extends GFAddOn
 		$styles = array(
 			array(
 				'handle'  => 'gf_customstyle_css',
-				'src'     => $this->get_base_url() . '/css/gf_customstyle.css',
+				'src'     => $this->get_base_url() . '/css/gf_default.css',
 				'version' => $this->_version,
 				'deps'    => array( 'wp-color-picker' ),
 				'enqueue' => array( array() ),
@@ -217,6 +217,57 @@ class GFCustomStyle extends GFAddOn
 						'class'   => 'cs-size',
 						'tooltip' => esc_html__( 'You can enable this funcionality for each form.', 'gf-custom-style' ),
 					),
+
+					array(
+						'label'   => esc_html__( 'border-style', 'gf-custom-style' ),
+						'type'    => 'select',
+						'name'    => 'border-style',
+						'id'      => 'input-border-style',
+						'class'   => 'cs-size',
+						'tooltip' => esc_html__( 'Você pode escolher qual o estilo da borda de seu input.', 'gf-custom-style' ),
+						'choices' => array(
+							array(
+								'label' => esc_html__( 'none', 'gf-custom-style' ),
+								'name'  => 'select-label-none',
+							),
+							array(
+								'label' => esc_html__( 'hidden', 'gf-custom-style' ),
+								'name'  => 'select-label-hidden',
+							),
+							array(
+								'label' => esc_html__( 'dotted', 'gf-custom-style' ),
+								'name'  => 'select-label-dotted',
+							),
+							array(
+								'label' => esc_html__( 'dashed', 'gf-custom-style' ),
+								'name'  => 'select-label-dashed',
+							),
+							array(
+								'label' => esc_html__( 'solid', 'gf-custom-style' ),
+								'name'  => 'select-label-solid',
+							),
+							array(
+								'label' => esc_html__( 'double', 'gf-custom-style' ),
+								'name'  => 'select-label-double',
+							),
+							array(
+								'label' => esc_html__( 'groove', 'gf-custom-style' ),
+								'name'  => 'select-label-groove',
+							),
+							array(
+								'label' => esc_html__( 'ridge', 'gf-custom-style' ),
+								'name'  => 'select-label-ridge',
+							),
+							array(
+								'label' => esc_html__( 'inset', 'gf-custom-style' ),
+								'name'  => 'select-label-inset',
+							),
+							array(
+								'label' => esc_html__( 'outset', 'gf-custom-style' ),
+								'name'  => 'select-label-outset',
+							),
+						),
+					),
 				),
 			),
 
@@ -307,7 +358,7 @@ class GFCustomStyle extends GFAddOn
 					),
 
 					array(
-						'label'   => esc_html__( 'placeholder', 'gf-custom-style' ),
+						'label'   => esc_html__( 'placeholder color', 'gf-custom-style' ),
 						'type'    => 'text',
 						'name'    => 'text-placeholder',
 						'id'      => 'text-placeholder',
@@ -354,12 +405,86 @@ class GFCustomStyle extends GFAddOn
 							),
 						),
 					),
+
+					array(
+						'label'   => esc_html__( 'text-style', 'gf-custom-style' ),
+						'type'    => 'select',
+						'name'    => 'text-text-style',
+						'id'      => 'text-text-style',
+						'choices' => array(
+							array(
+								'label' => esc_html__( 'normal', 'gf-custom-style' ),
+								'name'  => 'text-text-normal',
+							),
+							array(
+								'label' => esc_html__( 'italic', 'gf-custom-style' ),
+								'name'  => 'text-text-italic',
+							),
+							array(
+								'label' => esc_html__( 'oblique', 'gf-custom-style' ),
+								'name'  => 'text-text-oblique',
+							),
+						),
+					),
+
+					array(
+						'label'   => esc_html__( 'text-weight', 'gf-custom-style' ),
+						'type'    => 'select',
+						'name'    => 'text-text-weight',
+						'id'      => 'text-text-weight',
+						'choices' => array(
+							array(
+								'label' => esc_html__( '100', 'gf-custom-style' ),
+								'name'  => 'text-text-100',
+							),
+							array(
+								'label' => esc_html__( '200', 'gf-custom-style' ),
+								'name'  => 'text-text-200',
+							),
+							array(
+								'label' => esc_html__( '300', 'gf-custom-style' ),
+								'name'  => 'text-text-300',
+							),
+							array(
+								'label' => esc_html__( '400', 'gf-custom-style' ),
+								'name'  => 'text-text-400',
+							),
+							array(
+								'label' => esc_html__( '500', 'gf-custom-style' ),
+								'name'  => 'text-text-500',
+							),
+							array(
+								'label' => esc_html__( '600', 'gf-custom-style' ),
+								'name'  => 'text-text-600',
+							),
+							array(
+								'label' => esc_html__( '700', 'gf-custom-style' ),
+								'name'  => 'text-text-700',
+							),
+							array(
+								'label' => esc_html__( '800', 'gf-custom-style' ),
+								'name'  => 'text-text-800',
+							),
+							array(
+								'label' => esc_html__( '900', 'gf-custom-style' ),
+								'name'  => 'text-text-900',
+							),
+							array(
+								'label' => esc_html__( 'lighter', 'gf-custom-style' ),
+								'name'  => 'text-text-lighter',
+							),
+							array(
+								'label' => esc_html__( 'bolder', 'gf-custom-style' ),
+								'name'  => 'text-text-bolder',
+							),
+						),
+					),
 				),
 			),
 
 			// Configuracao do botão do formulario
 			array(
-				'title'  => esc_html__( 'BUTTON', 'gf-custom-style' ),
+				'title'  => esc_html__( 'Button', 'gf-custom-style' ),
 				'fields' => array(
 					array(
 						'label'   => esc_html__( 'background-color', 'gf-custom-style' ),
@@ -377,12 +502,12 @@ class GFCustomStyle extends GFAddOn
 					),
 
 					array(
-						'label'   => esc_html__( 'background-color ::hover', 'gf-custom-style' ),
+						'label'   => esc_html__( 'background-color hover', 'gf-custom-style' ),
 						'type'    => 'text',
 						'name'    => 'btn-background-colo-hover',
 						'id'      => 'btn-bg-color-hover',
 						'class'   => 'colorpicker',
-						'tooltip' => esc_html__( 'You can enable this funcionality for each form.', 'gf-custom-style' ),
+						'tooltip' => esc_html__( 'Cor do botão quando o mouse passar por cima.', 'gf-custom-style' ),
 						'choices' => array(
 							array(
 								'label' => esc_html__( 'Disabled', 'gf-custom-style' ),
@@ -392,12 +517,12 @@ class GFCustomStyle extends GFAddOn
 					),
 
 					array(
-						'label'   => esc_html__( 'color', 'gf-custom-style' ),
+						'label'   => esc_html__( 'text color', 'gf-custom-style' ),
 						'type'    => 'text',
 						'name'    => 'btn-text-color',
 						'id'      => 'btn-text-color',
 						'class'   => 'colorpicker',
-						'tooltip' => esc_html__( 'You can enable this funcionality for each form.', 'gf-custom-style' ),
+						'tooltip' => esc_html__( 'Cor do botão.', 'gf-custom-style' ),
 						'choices' => array(
 							array(
 								'label' => esc_html__( 'Disabled', 'gf-custom-style' ),
@@ -407,12 +532,12 @@ class GFCustomStyle extends GFAddOn
 					),
 
 					array(
-						'label'   => esc_html__( 'color ::hover', 'gf-custom-style' ),
+						'label'   => esc_html__( 'text color hover', 'gf-custom-style' ),
 						'type'    => 'text',
 						'name'    => 'btn-text-color-hover',
 						'id'      => 'btn-text-color-hover',
 						'class'   => 'colorpicker',
-						'tooltip' => esc_html__( 'You can enable this funcionality for each form.', 'gf-custom-style' ),
+						'tooltip' => esc_html__( 'Cor do texto do botão quando o mouse passar por cima.', 'gf-custom-style' ),
 						'choices' => array(
 							array(
 								'label' => esc_html__( 'Disabled', 'gf-custom-style' ),
@@ -506,7 +631,7 @@ class GFCustomStyle extends GFAddOn
 				'title'  => esc_html__( 'Notifications', 'gf-custom-style' ),
 				'fields' => array(
 					array(
-						'label'   => esc_html__( 'color error', 'gf-custom-style' ),
+						'label'   => esc_html__( 'Color message error', 'gf-custom-style' ),
 						'type'    => 'text',
 						'name'    => 'validation-error',
 						'id'      => 'validation-error',
@@ -521,7 +646,7 @@ class GFCustomStyle extends GFAddOn
 					),
 
 					array(
-						'label'   => esc_html__( 'color sucess', 'gf-custom-style' ),
+						'label'   => esc_html__( 'Color message sucess', 'gf-custom-style' ),
 						'type'    => 'text',
 						'name'    => 'validation-sucess',
 						'id'      => 'validation-sucess',
