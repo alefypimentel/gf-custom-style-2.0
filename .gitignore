@@ -1,1 +1,35 @@
+/*.html
+/*.php
+/*.txt
+/vendor/
+/wp-admin/
+/wp-content/
+/wp-includes/
+/.htaccess
 .DS_Store
+
+### Files ###
+wp-config.php
+
+### Node ###
+node_modules/
+
+### Logs ###
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+### composer ###
+composer.lock
+
+### Sass ###
+.sass-cache/
+*.css.map
+
+### Git ###
+*.orig
+
+### vscode ###
+.vscode/
