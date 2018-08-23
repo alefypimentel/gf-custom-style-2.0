@@ -8,8 +8,17 @@
 	};
 
 	Module.addEventListener = function() {
-		console.log('Start Custom Style');
+		this.colorPicker();
 	};
 
-	Module.init();
+ 	Module.colorPicker = function() {
+		if (!$().wpColorPicker) {
+			return;
+		}
+ 		$( '#tab_gf-custom-style .colorpicker' ).wpColorPicker();
+	};
+
+	console.log('Start Custom Style');
+
+ 	Module.init();
 })(jQuery);
